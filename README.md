@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 # zzudingding
 郑大小丁丁项目
 包含的功能，下载看看就知道了。
@@ -14,4 +14,3 @@ bug修复：
 =======
 # zzudingding-amdin
 小丁丁的管理控制客户端
->>>>>>> origin/master

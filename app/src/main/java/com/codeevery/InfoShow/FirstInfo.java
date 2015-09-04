@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.codeevery.myElement.LongPopWinodws;
 import com.codeevery.zzudingding.R;
 
 import org.jsoup.Jsoup;
@@ -30,7 +31,7 @@ import com.codeevery.myElement.LoadMoreListView;
 /**
  * Created by songchao on 15/8/9.
  */
-public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPostGet.DoSomeThing, com.codeevery.myElement.LoadMoreListView.IReflashListener {
+public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPostGet.DoSomeThing, com.codeevery.myElement.LoadMoreListView.IReflashListener,LongPopWinodws.PopOnDo {
     ImageButton backButton;
     LoadMoreListView loadMoreListView;
     TextView title;
@@ -39,6 +40,7 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
     int pageNum = 0;
     LayoutInflater inflater;
     String url,charaset;
+    LongPopWinodws popWinodws;
 
     ArrayList<String> timeList, titleList, titSiteList;
     BaseAdapter adapter;
@@ -66,6 +68,9 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         loadMoreListView.setInterface(this);
         doPostGet = new DoPostGet(this);
         doPostGet.setInterface(this);
+
+        popWinodws = new LongPopWinodws(FirstInfo.this);
+        popWinodws.setInterface(this);
 
         Intent intent = this.getIntent();
         this.doWhich = intent.getIntExtra("doWhich", 1);
@@ -128,7 +133,8 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         loadMoreListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                return false;
+                popWinodws.showPopWindow(view,"推送");
+                return true;
             }
         });
     }
@@ -276,5 +282,11 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
     @Override
     public void onReflash() {
         doPostGet.doGet(nextSite, charaset);
+    }
+
+    //在长按某个选项的时候弹出的按钮点击要做的事情
+    @Override
+    public void Do() {
+        System.out.println("推送了。。");
     }
 }
