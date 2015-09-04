@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_zzudingding" default="compile.module.zzudingding">
+  <dirname property="module.zzudingding.basedir" file="${ant.file.module_zzudingding}"/>
+  
+  <property name="module.jdk.home.zzudingding" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.zzudingding" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.zzudingding" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.zzudingding" value="-encoding UTF-8 -source 8 ${compiler.args}"/>
+  
+  <property name="zzudingding.output.dir" value="${module.zzudingding.basedir}/build/classes/production/zzudingding"/>
+  <property name="zzudingding.testoutput.dir" value="${module.zzudingding.basedir}/build/classes/test/zzudingding"/>
+  
+  <path id="zzudingding.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="zzudingding.module.production.classpath">
+    <path refid="${module.jdk.classpath.zzudingding}"/>
+  </path>
+  
+  <path id="zzudingding.runtime.production.module.classpath">
+    <pathelement location="${zzudingding.output.dir}"/>
+  </path>
+  
+  <path id="zzudingding.module.classpath">
+    <path refid="${module.jdk.classpath.zzudingding}"/>
+    <pathelement location="${zzudingding.output.dir}"/>
+  </path>
+  
+  <path id="zzudingding.runtime.module.classpath">
+    <pathelement location="${zzudingding.testoutput.dir}"/>
+    <pathelement location="${zzudingding.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.zzudingding">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.zzudingding">
+    <patternset refid="excluded.from.module.zzudingding"/>
+  </patternset>
+  
+  
+  <target name="compile.module.zzudingding" depends="compile.module.zzudingding.production,compile.module.zzudingding.tests" description="Compile module zzudingding"/>
+  
+  <target name="compile.module.zzudingding.production" depends="register.custom.compilers" description="Compile module zzudingding; production classes"/>
+  
+  <target name="compile.module.zzudingding.tests" depends="register.custom.compilers,compile.module.zzudingding.production" description="compile module zzudingding; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.zzudingding" description="cleanup module">
+    <delete dir="${zzudingding.output.dir}"/>
+    <delete dir="${zzudingding.testoutput.dir}"/>
+  </target>
+</project>
