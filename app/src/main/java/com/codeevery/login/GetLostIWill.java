@@ -23,7 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -31,7 +31,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.codeevery.NetGetPost.DoPostGet;
 import com.codeevery.NetGetPost.VolleyErrorHelper;
 import com.codeevery.application.AllObject;
 import com.codeevery.myElement.GetPostThread;

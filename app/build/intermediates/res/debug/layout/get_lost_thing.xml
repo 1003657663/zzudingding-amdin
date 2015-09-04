@@ -50,4 +50,4 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:background="@drawable/primary_button"/>
-</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/get_lost_thing.xml -->
+</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/get_lost_thing.xml -->

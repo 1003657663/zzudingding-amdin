@@ -10,4 +10,4 @@
         android:layout_height="wrap_content"
         android:background="@color/background">
     </WebView>
-</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/my_info.xml -->
+</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/my_info.xml -->

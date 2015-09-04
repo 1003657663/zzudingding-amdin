@@ -35,4 +35,4 @@
     <item android:state_focused="true" android:state_selected="false" android:state_pressed="true" android:drawable="@drawable/tab_unselected_pressed_myactionbar" />
     <item android:state_focused="true" android:state_selected="true"  android:state_pressed="true" android:drawable="@drawable/tab_selected_pressed_myactionbar" />
 </selector>
-<!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/drawable/tab_indicator_ab_myactionbar.xml -->
+<!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/drawable/tab_indicator_ab_myactionbar.xml -->

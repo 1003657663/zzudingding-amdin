@@ -20,7 +20,7 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.codeevery.login.SendInfoToService;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;

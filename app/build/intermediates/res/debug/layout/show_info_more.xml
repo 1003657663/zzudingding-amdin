@@ -60,4 +60,4 @@
         android:layout_weight="1"
         android:background="@color/background">
     </WebView>
-</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/show_info_more.xml -->
+</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/show_info_more.xml -->

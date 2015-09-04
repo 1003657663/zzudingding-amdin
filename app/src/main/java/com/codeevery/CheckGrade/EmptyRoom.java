@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,7 +23,7 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.codeevery.myElement.myDialog;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

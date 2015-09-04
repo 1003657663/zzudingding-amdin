@@ -3,12 +3,11 @@ package com.codeevery.myElement;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 /**
  * Created by songchao on 15/8/4.

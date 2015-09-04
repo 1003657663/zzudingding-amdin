@@ -29,7 +29,7 @@ MERGED from com.android.support:support-v4:22.2.1:22:5
 		ADDED from AndroidManifest.xml:12:9
 	android:name
 		ADDED from AndroidManifest.xml:8:9
-activity#com.codeevery.zzudingding.MainActivity
+activity#com.codeevery.zzudingdingAd.MainActivity
 ADDED from AndroidManifest.xml:13:9
 	android:label
 		ADDED from AndroidManifest.xml:15:13
@@ -47,7 +47,7 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:19:17
 	android:name
 		ADDED from AndroidManifest.xml:19:27
-activity#com.codeevery.zzudingding.SearchResultActivity
+activity#com.codeevery.zzudingdingAd.SearchResultActivity
 ADDED from AndroidManifest.xml:22:9
 	android:windowSoftInputMode
 		ADDED from AndroidManifest.xml:23:13
@@ -73,7 +73,7 @@ activity#com.codeevery.login.FoodcardLoginActivity
 ADDED from AndroidManifest.xml:29:9
 	android:name
 		ADDED from AndroidManifest.xml:29:19
-activity#com.codeevery.zzudingding.AboutMe
+activity#com.codeevery.zzudingdingAd.AboutMe
 ADDED from AndroidManifest.xml:30:9
 	android:name
 		ADDED from AndroidManifest.xml:30:19
@@ -101,11 +101,11 @@ activity#com.codeevery.InfoShow.SpendMoney
 ADDED from AndroidManifest.xml:36:9
 	android:name
 		ADDED from AndroidManifest.xml:36:19
-activity#com.codeevery.zzudingding.SetActivity
+activity#com.codeevery.zzudingdingAd.SetActivity
 ADDED from AndroidManifest.xml:37:9
 	android:name
 		ADDED from AndroidManifest.xml:37:19
-activity#com.codeevery.zzudingding.FeedBack
+activity#com.codeevery.zzudingdingAd.FeedBack
 ADDED from AndroidManifest.xml:38:9
 	android:name
 		ADDED from AndroidManifest.xml:38:19

@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

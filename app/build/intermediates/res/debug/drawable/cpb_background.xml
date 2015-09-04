@@ -6,4 +6,4 @@
             android:width="@dimen/cpb_stroke_width"
             android:color="@color/cpb_blue"/>
     <solid android:color="@color/cpb_blue"/>
-</shape><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/drawable/cpb_background.xml -->
+</shape><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/drawable/cpb_background.xml -->

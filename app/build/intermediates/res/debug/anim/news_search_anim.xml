@@ -4,4 +4,4 @@
     android:animationOrder="normal"
     android:animation="@anim/news_anim"
     xmlns:android="http://schemas.android.com/apk/res/android">
-</layoutAnimation><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/anim/news_search_anim.xml -->
+</layoutAnimation><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/anim/news_search_anim.xml -->

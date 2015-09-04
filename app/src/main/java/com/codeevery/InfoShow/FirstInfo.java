@@ -1,10 +1,13 @@
 package com.codeevery.InfoShow;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,21 +15,37 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.codeevery.NetGetPost.VolleyErrorHelper;
 import com.codeevery.myElement.LongPopWinodws;
-import com.codeevery.zzudingding.R;
+import com.codeevery.myElement.myDialog;
+import com.codeevery.zzudingdingAd.R;
 
+import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.codeevery.NetGetPost.DoPostGet;
 import com.codeevery.myElement.LoadMoreListView;
+
+import io.yunba.android.manager.YunBaManager;
 
 /**
  * Created by songchao on 15/8/9.
@@ -39,8 +58,10 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
     boolean isFirst = true;
     int pageNum = 0;
     LayoutInflater inflater;
-    String url,charaset;
+    String url,charaset,titleText;
     LongPopWinodws popWinodws;
+    myDialog dialog;
+    RequestQueue requestQueue;
 
     ArrayList<String> timeList, titleList, titSiteList;
     BaseAdapter adapter;
@@ -72,6 +93,9 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         popWinodws = new LongPopWinodws(FirstInfo.this);
         popWinodws.setInterface(this);
 
+        dialog = new myDialog(FirstInfo.this);
+        requestQueue = Volley.newRequestQueue(FirstInfo.this);
+
         Intent intent = this.getIntent();
         this.doWhich = intent.getIntExtra("doWhich", 1);
         this.url = intent.getStringExtra("url");
@@ -92,23 +116,28 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         switch (doWhich){
             case 1:
                 title.setText("教务公告");
+                titleText = "教务公告";
                 onDo1(str);
                 break;
             case 2:
                 title.setText("通知公告");
+                titleText = "通知公告";
                 onDo2(str);
                 break;
             case 3:
                 title.setText("学术动态");
+                titleText = "学术动态";
                 //onDo2和第三个要解析的网页结构一样
                 onDo2(str);
                 break;
             case 4:
                 title.setText("教务要闻");
+                titleText = "教务要闻";
                 onDo1(str);
                 break;
             case 5:
                 title.setText("招聘信息");
+                titleText = "招聘信息";
                 onDo5(str);
                 break;
             case 6:
@@ -133,7 +162,7 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         loadMoreListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                popWinodws.showPopWindow(view,"推送");
+                popWinodws.showPopWindow(view, "推送", position);
                 return true;
             }
         });
@@ -236,7 +265,7 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         if(matcher.find()){
             allPageNum= Integer.parseInt(matcher.group(1));
         }
-        loadMoreListView.setPage(allPageNum, pageNum,everyPageNum);
+        loadMoreListView.setPage(allPageNum, pageNum, everyPageNum);
     }
 
     public void onDoAll() {
@@ -284,9 +313,141 @@ public class FirstInfo extends Activity implements com.codeevery.NetGetPost.DoPo
         doPostGet.doGet(nextSite, charaset);
     }
 
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            if(msg.what==1){
+                dialog.showDialogWithSure("推送成功","确定");
+            }else if(msg.what == -1){
+                dialog.showDialogWithSure("推送失败","确定");
+            }
+        }
+    };
+
     //在长按某个选项的时候弹出的按钮点击要做的事情
+    //要获取内容，然后推送
     @Override
-    public void Do() {
+    public void Do(int position) {
+        popWinodws.hidePopWindows();
+        dialog.showProgressDialog("正在推送");
+        //第一步获取简介
+        getContent(titSiteList.get(position),charaset,position);
+    }
+
+    private void tuiSend(int position){
+        content = content.replaceAll("\\s*","");
+        String msg = titleText+"&"+titleList.get(position)+"&"+timeList.get(position)+"&"+content+"&"+titSiteList.get(position);
+        System.out.println(msg);
+        YunBaManager.publish(FirstInfo.this, "topNews", msg, new IMqttActionListener() {
+            @Override
+            public void onSuccess(IMqttToken iMqttToken) {
+                dialog.hideProgressDialog();
+                handler.sendEmptyMessage(1);
+            }
+            @Override
+            public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
+                handler.sendEmptyMessage(-1);
+            }
+        });
         System.out.println("推送了。。");
     }
+
+    private void getContent(String url, final String charase, final int position){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                switch (doWhich) {
+                    case 1:
+                        on1(s);
+                        break;
+                    case 2:
+                        on2(s);
+                        break;
+                    case 3:
+                        on2(s);
+                        break;
+                    case 4:
+                        on1(s);
+                        break;
+                    case 5:
+                        on5(s);
+                        break;
+                    case 6:
+                        break;
+                    default:
+                        break;
+                }
+                tuiSend(position);
+            }
+        },new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                dialog.hideProgressDialog();
+                Toast.makeText(FirstInfo.this, VolleyErrorHelper.getMessage(volleyError,FirstInfo.this),Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                String parase;
+                try {
+                    parase = new String(response.data,charase);
+                } catch (UnsupportedEncodingException e) {
+                    parase = new String(response.data);
+                    e.printStackTrace();
+                }
+                return Response.success(parase, HttpHeaderParser.parseCacheHeaders(response));
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
+
+
+    String content = "";
+    private void on1(String s) {
+        Document document = Jsoup.parse(s);
+        Elements tr;
+        try {
+            String con = document.getElementById("02").getElementsByTag("tr").first().text();
+            content = con.substring(0,50);
+        } catch (Exception ex) {
+            dialog.hideProgressDialog();
+            Log.e("get content wrong", "wrong");
+            content = "";
+        }
+
+    }
+
+    private void on2(String s) {
+        String title = "";
+        String otherInfo = "";
+        Document document = Jsoup.parse(s);
+        if(document.head().html().contains("refresh")){
+            String jumpUrl = document.head().select("meta[http-equiv=refresh]").attr("content");
+            Pattern pattern = Pattern.compile("url='(.*)'");
+            Matcher matcher = pattern.matcher(jumpUrl);
+            if(matcher.find()){
+                jumpUrl = matcher.group(1);
+            }
+            doPostGet.doGet(jumpUrl, charaset);
+            return;
+        }
+        Element body = document.body();
+        try {
+            String con = body.getElementsByClass("zzj_5").first().text();
+            content = con.substring(0,50);
+        } catch (Exception ex) {
+            dialog.hideProgressDialog();
+            ex.printStackTrace();
+            content = "";
+            return;
+        }
+    }
+
+    private void on5(String s){
+        Element submain = Jsoup.parse(s).getElementsByClass("submain-article").first();
+        submain.getElementsByTag("h1").first().remove();
+        content = submain.text().substring(0,50);
+    }
+
 }

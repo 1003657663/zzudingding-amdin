@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;

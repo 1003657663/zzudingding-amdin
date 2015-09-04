@@ -36,4 +36,4 @@
         android:background="@drawable/primary_button"
         android:layout_marginTop="10dp"
         android:text="提交"/>
-</RelativeLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/check_num_layout.xml -->
+</RelativeLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/check_num_layout.xml -->

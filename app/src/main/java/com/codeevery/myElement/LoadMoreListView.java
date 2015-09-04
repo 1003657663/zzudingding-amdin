@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 /**
  * Created by songchao on 15/8/3.

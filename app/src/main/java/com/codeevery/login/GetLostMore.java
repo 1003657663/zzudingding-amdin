@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.codeevery.application.SerializableMap;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -16,7 +16,6 @@ import org.jsoup.select.Elements;
 
 import com.codeevery.NetGetPost.DoPostGet;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**

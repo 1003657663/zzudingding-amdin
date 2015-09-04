@@ -2,4 +2,4 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checkable="false" android:drawable="@color/grey"></item>
     <item android:state_focused="true" android:drawable="@color/red"></item>
-</selector><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/drawable/nocheck.xml -->
+</selector><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/drawable/nocheck.xml -->

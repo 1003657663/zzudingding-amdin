@@ -1,13 +1,11 @@
 package com.codeevery.login;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,12 +17,10 @@ import android.widget.Toast;
 
 import com.codeevery.InfoShow.SpendMoney;
 import com.codeevery.myElement.myDialog;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import com.codeevery.NetGetPost.GetInternetState;
 import com.codeevery.application.AllObject;
-
-import java.sql.Time;
 
 /*
 *说明：

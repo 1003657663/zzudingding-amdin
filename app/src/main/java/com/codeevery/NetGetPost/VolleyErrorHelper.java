@@ -9,7 +9,7 @@ import com.android.volley.NoConnectionError;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

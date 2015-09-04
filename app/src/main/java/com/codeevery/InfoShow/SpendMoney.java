@@ -12,7 +12,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 import com.google.gson.Gson;
 
 import org.jsoup.Jsoup;

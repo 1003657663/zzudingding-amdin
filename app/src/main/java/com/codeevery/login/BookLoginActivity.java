@@ -1,51 +1,20 @@
 package com.codeevery.login;
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
-import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.codeevery.CheckGrade.ChangePassword;
-import com.codeevery.CheckGrade.CheckGradeActivity;
-import com.codeevery.CheckGrade.EmptyRoom;
 import com.codeevery.myElement.myDialog;
-import com.codeevery.zzudingding.R;
-
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.net.CookieStore;
-import java.net.HttpCookie;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.codeevery.zzudingdingAd.R;
 
 import com.codeevery.NetGetPost.GetInternetState;
-import com.codeevery.application.AllObject;
-import com.codeevery.myElement.GetPostThread;
-
-import io.yunba.android.manager.YunBaManager;
 
 /*
 *说明：

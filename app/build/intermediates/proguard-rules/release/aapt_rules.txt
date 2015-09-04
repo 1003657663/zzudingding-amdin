@@ -145,19 +145,19 @@
 -keep class com.codeevery.myElement.TextImgRightButton { <init>(...); }
 
 # view AndroidManifest.xml #generated:48
--keep class com.codeevery.zzudingding.AboutMe { <init>(...); }
+-keep class zzudingdingAd.AboutMe { <init>(...); }
 
 # view AndroidManifest.xml #generated:56
--keep class com.codeevery.zzudingding.FeedBack { <init>(...); }
+-keep class zzudingdingAd.FeedBack { <init>(...); }
 
 # view AndroidManifest.xml #generated:29
--keep class com.codeevery.zzudingding.MainActivity { <init>(...); }
+-keep class zzudingdingAd.MainActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:39
--keep class com.codeevery.zzudingding.SearchResultActivity { <init>(...); }
+-keep class zzudingdingAd.SearchResultActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:55
--keep class com.codeevery.zzudingding.SetActivity { <init>(...); }
+-keep class zzudingdingAd.SetActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:79
 -keep class io.yunba.android.core.YunBaReceiver { <init>(...); }

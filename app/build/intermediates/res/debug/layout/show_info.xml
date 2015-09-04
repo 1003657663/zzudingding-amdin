@@ -11,4 +11,4 @@
         android:layout_height="match_parent"
         android:layoutAnimation="@anim/news_search_anim">
     </com.codeevery.myElement.LoadMoreListView>
-</RelativeLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/show_info.xml -->
+</RelativeLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/show_info.xml -->

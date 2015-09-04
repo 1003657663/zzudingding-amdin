@@ -1,28 +1,19 @@
 package com.codeevery.InfoShow;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.codeevery.NetGetPost.DoPostGet;
-import com.codeevery.NetGetPost.VolleyErrorHelper;
 import com.codeevery.myElement.myDialog;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 

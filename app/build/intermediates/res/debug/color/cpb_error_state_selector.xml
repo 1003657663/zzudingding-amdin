@@ -8,4 +8,4 @@
           android:color="@color/cpb_grey"/>
     <item android:state_enabled="true"
           android:color="@color/cpb_red"/>
-</selector><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/color/cpb_error_state_selector.xml -->
+</selector><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/color/cpb_error_state_selector.xml -->

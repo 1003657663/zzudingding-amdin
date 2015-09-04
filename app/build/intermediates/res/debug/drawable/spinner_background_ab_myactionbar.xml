@@ -26,4 +26,4 @@
         android:drawable="@drawable/spinner_ab_focused_myactionbar" />
     <item android:drawable="@drawable/spinner_ab_default_myactionbar" />
 </selector>
-<!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/drawable/spinner_background_ab_myactionbar.xml -->
+<!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/drawable/spinner_background_ab_myactionbar.xml -->

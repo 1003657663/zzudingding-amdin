@@ -48,4 +48,4 @@
         android:scrollbars="none"
         android:layoutAnimation="@anim/book_search_anim">
     </com.codeevery.myElement.LoadMoreListView>
-</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/search_result.xml -->
+</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/search_result.xml -->

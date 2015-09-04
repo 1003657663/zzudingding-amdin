@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.ImageView;
 
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;

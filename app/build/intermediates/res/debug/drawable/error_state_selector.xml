@@ -8,4 +8,4 @@
           android:color="@color/cpb_grey"/>
     <item android:state_enabled="true"
           android:color="#fe0a5a"/>
-</selector><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/drawable/error_state_selector.xml -->
+</selector><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/drawable/error_state_selector.xml -->

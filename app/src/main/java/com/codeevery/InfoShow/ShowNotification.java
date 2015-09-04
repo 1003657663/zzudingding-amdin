@@ -5,20 +5,14 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.codeevery.application.SerializableMap;
 import com.codeevery.login.GetLostMore;
-import com.codeevery.myElement.DatabaseHelper;
-import com.codeevery.zzudingding.MainActivity;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
-import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

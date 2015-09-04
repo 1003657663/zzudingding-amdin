@@ -8,4 +8,4 @@
           android:color="@color/material_blue_grey_950"/>
     <item android:state_enabled="true"
           android:color="#ffaa66cc"/>
-</selector><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/drawable/complete_state_selector.xml -->
+</selector><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/drawable/complete_state_selector.xml -->

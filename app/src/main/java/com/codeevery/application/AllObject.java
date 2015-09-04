@@ -80,7 +80,7 @@ public class AllObject extends Application {
     public void onCreate() {
         String pindao[] = new String[]{
                 "admin",//推送普通消息的频道名称
-                "topNews",//置顶新闻
+                "topNew",//置顶新闻
                 "news",//新闻制定频道,新闻推送的是标题,部分内容和网址
                 "update",//更新频道名称
                 "sendTo",//强制更新所有账号的上传状态，广播

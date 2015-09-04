@@ -35,4 +35,4 @@
             android:text="新生分班查询"
             android:background="@drawable/imgtextbutton"/>
     </LinearLayout>
-</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding/app/src/main/res/layout/fragment_third.xml -->
+</LinearLayout><!-- From: file:/Volumes/MACWIN/zzudingding-admin/app/src/main/res/layout/fragment_third.xml -->

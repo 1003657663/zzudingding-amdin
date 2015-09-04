@@ -1,16 +1,13 @@
 package com.codeevery.InfoShow;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
-import android.os.Message;
-import android.support.v4.app.Fragment;
 
 import com.codeevery.application.AllObject;
 import com.codeevery.myElement.DatabaseHelper;
-import com.codeevery.zzudingding.tabFragment2;
+import com.codeevery.zzudingdingAd.tabFragment2;
 
 /**
  * Created by songchao on 15/8/21.

@@ -1,7 +1,6 @@
 package com.codeevery.login;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,14 +16,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codeevery.CheckGrade.ChangePassword;
 import com.codeevery.CheckGrade.CheckGradeActivity;
 import com.codeevery.CheckGrade.EmptyRoom;
 import com.codeevery.myElement.myDialog;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttToken;

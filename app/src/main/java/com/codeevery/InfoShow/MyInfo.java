@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.codeevery.application.AllObject;
 import com.codeevery.myElement.myDialog;
-import com.codeevery.zzudingding.R;
+import com.codeevery.zzudingdingAd.R;
 
 /**
  * Created by songchao on 15/8/25.
